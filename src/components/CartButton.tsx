@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
-function CartButton(props:any) {
+function CartButton() {
     const [open, setOpen] = useState(false);
-    const { cartItems, removeCartItem } = props;
+    const { cartItems, removeCartItem } = useCart();
   return (
     <>
       <button  className="relative bg-gray-800 text-white px-3 py-2 rounded" 

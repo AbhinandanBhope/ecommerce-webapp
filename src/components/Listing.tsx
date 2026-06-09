@@ -1,8 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-function Listing(props:any) { 
-  const {addCartItem, cartItems } =props;
+function Listing() { 
   
 
   const albums =  [{
@@ -44,7 +43,7 @@ function Listing(props:any) {
     {`$${album.price}.00`}
   </h6>
 
-  <Button album={album} addCartItem={addCartItem} cartItems={cartItems} />
+  <Button album={album} />
 </div>
           </div>
         ))}

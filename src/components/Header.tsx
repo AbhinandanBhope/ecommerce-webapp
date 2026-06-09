@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import CartButton from "./CartButton";
-type HeaderProps = {
-  addCartItem: (item: any) => void;
-  removeCartItem: (index: number) => void;
-  cartItems: any[];
-};
-
-const Header: React.FC<HeaderProps> = (props ) => {
+const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -66,9 +60,7 @@ const Header: React.FC<HeaderProps> = (props ) => {
   {/* Wishlist Placeholder */}
   
   {/* Cart Button */}
-  <CartButton  addCartItem={props.addCartItem}
-  removeCartItem={props.removeCartItem}
-  cartItems={props.cartItems}/>
+  <CartButton />
 </div>
 
       {/* Right Section */}
