@@ -9,9 +9,9 @@ export default function Content() {
   </h1>
  
 </div>
- <h1 className="metal-mania text-1xl font-serif">
-    MUSIC
-  </h1>
+<h1 className="metal-mania text-xl text-center font-serif">
+  MUSIC
+</h1>
 </>
   )
 }

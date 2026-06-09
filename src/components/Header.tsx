@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
+import CartButton from "./CartButton";
+type HeaderProps = {
+  addCartItem: (item: any) => void;
+  removeCartItem: (index: number) => void;
+  cartItems: any[];
+};
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = (props ) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const cartCount = 3;
   const wishlistCount = 2;
+
+ // console.log("props UUUUU",props)
 
   const profileRef = useRef<HTMLDivElement>(null);
 
@@ -53,6 +61,15 @@ const Header: React.FC = () => {
           </a>
         ))}
       </nav>
+     <div className="flex items-center gap-4 absolute  top-0 right-0 size-16 ">
+  {/* Search Placeholder */}
+  {/* Wishlist Placeholder */}
+  
+  {/* Cart Button */}
+  <CartButton  addCartItem={props.addCartItem}
+  removeCartItem={props.removeCartItem}
+  cartItems={props.cartItems}/>
+</div>
 
       {/* Right Section */}
       <div className="flex items-center gap-4">
